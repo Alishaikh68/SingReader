@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SignReader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #8E2DE2, #FF7F50);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 40px;
+            color: #FFF;
+            text-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            animation: glowText 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowText {
+            0% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #8E2DE2, 0 0 30px #FF7F50;
+            }
+            100% {
+                text-shadow: 0 0 20px #fff, 0 0 40px #8E2DE2, 0 0 60px #FF7F50;
+            }
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .login-container {
+            background: rgba(28, 28, 28, 0.85);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 255, 127, 0.4), 0 0 60px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            width: 400px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 60px rgba(0, 255, 127, 0.6), 0 0 90px rgba(255, 255, 255, 0.2);
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: #F4A261;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #00FF7F, #00C76B);
+            color: #000;
+            font-weight: bold;
+            padding: 14px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        input[type="submit"]::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, #00FF7F, #00C76B, #00FF7F);
+            animation: rotateGreenGlow 4s linear infinite;
+            z-index: 0;
+            filter: blur(20px);
+            opacity: 0.3;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #00FF9D, #00D488);
+            color: #fff;
+        }
+
+        input[type="submit"] span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes rotateGreenGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .register-link {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .register-link a {
+            color: #FFEB3B;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-msg {
+            color: #FF6B6B;
+            font-size: 0.85em;
+            margin-top: -18px;
+            margin-bottom: 15px;
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .login-container {
+                width: 100%;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SignReader</h1>
+
+    <div class="main-wrapper">
+        <div class="login-container">
+            <h2>Login</h2>
+
+{% if error %}
+    <p class="error-msg" style="display:block;">{{ error }}</p>
+{% endif %}
+
+<form method="POST" onsubmit="return validateForm()">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" id="password" name="password" placeholder="Password (min 8 characters)"
+           pattern=".{8,}" title="Password must be at least 8 characters long" required />
+    <p id="passwordError" class="error-msg">Password must be at least 8 characters.</p>
+    <input type="submit" value="Login" />
+</form>
+<p class="register-link">Don't have an account? <a href="/register">Register</a></p>
+
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const errorMsg = document.getElementById("passwordError");
+
+            if (password.length < 8) {
+                errorMsg.style.display = "block";
+                return false;
+            } else {
+                errorMsg.style.display = "none";
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

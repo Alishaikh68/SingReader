@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignReader | About</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #8E2DE2, #FF7F50); /* Beautiful gradient background */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 120px; /* Increased padding for space to accommodate footer */
+            min-height: 100vh;
+            overflow: auto;
+            margin: 0 20px; /* Margin to prevent content from touching edges */
+            border-radius: 15px; /* Rounded corners for a softer, luxurious look */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            background-attachment: fixed; /* Fixes background on scroll for elegance */
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f5a623; /* Golden color for a more expensive feel */
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            color: #fff;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+        
+        
+        
+        .btn {
+            font-size: 1em;
+            background-color: #f5a623; /* Golden color */
+            padding: 10px 50px;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #d48821; /* Darker shade for hover effect */
+            transform: translateY(-5px); /* Hover effect for more interaction */
+        }
+        
+        footer {
+            background-color: #1e293b;
+            color: #d1d5db;
+            text-align: center;
+            padding: 30px;
+            margin-top: 200px;
+            border-radius: 15px;
+        }
+        
+        footer a {
+            color: #4fd1c5;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+
+        /* Fullscreen container */
+        .container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 50px; /* Added side padding */
+        }
+
+        /* Content Style */
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.1); /* Subtle light background */
+            border-radius: 20px; /* Soft rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Soft shadow for depth */
+            backdrop-filter: blur(5px); /* Slight blur effect for elegance */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .luxury-divider {
+            margin: 40px;
+            width: 90%;
+            border: 1.7px solid #b3ff01;
+            border-radius: 10px;
+            opacity: 0.5;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        
+        .team-section {
+            background-color: #fc10d12b;
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0.4, 0.4, 0.4, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .team-section h2 {
+            font-size: 3.5em;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #d2f700;
+            text-shadow: 0 10px 30px rgba(0.4, 0.4, 0.4, 0.7);
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background-color: #fc10d12b;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            text-align: center;
+            max-width: 250px;
+            margin: 15px;
+            flex: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            border: 3px,solid black;
+            border-color:black;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: yellow;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #4fd1c5;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #f5a623;
+        }
+
+
+        /* Animation for fade-in effects */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+    </style>
+        
+</head>
+<body>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <div class="content">
+            <h1>About SignReader</h1>
+            <h2>Sign Language Detection using AI</h2>
+            <div class="description">
+                <p>
+                    SignReader uses cutting-edge AI technology to detect and interpret sign language in real-time. 
+                    Our system precisely predicts hand gestures and translates them into text, making communication seamless and accessible for everyone.
+                </p>
+                <p>
+                    Combining deep learning models and advanced image processing, we empower the community by breaking barriers between the hearing and non-hearing world. Our mission is to provide an intuitive, fast, and reliable tool for sign language recognition, fostering inclusive communication.
+                </p>
+                <p>
+                    Join us in transforming how we communicate through technology. Together, we can create a more connected and inclusive world.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="luxury-divider"></div>
+
+    <div class="team-section">
+        <h2>Meet the SignReader Team</h2>
+        <div class="team-members">
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/AliShaikh.png') }}" alt="Team Member 2">
+                <h3>Maulali Shaikh</h3>
+                <div class="social-links">
+                    <a href="https://github.com/Alishaikh68" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/maulali-shaikh-1128442b3/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        
+    </div>
+    <a href="{{ url_for('home') }}" class="btn">Go To Home</a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SignReader | Designed by <a href="">Team SingReader</a></p>  
+    </footer>
+
+</body>
+</html>
