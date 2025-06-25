@@ -32,3 +32,15 @@ The more you use SignReader, the smarter it gets. The system continuously improv
 🌍
 Step 6: Global Accessibility
 SignReader is designed to bridge communication gaps globally. It's not just for one language—it's adaptable for different sign languages across the world, making it universally accessible.
+
+
+........................................................................................
+![Sign1](https://github.com/user-attachments/assets/17630888-245a-4307-b8b8-f811cbc61e10)
+........................................................................................
+![Sign2](https://github.com/user-attachments/assets/b4341691-6194-4d94-9276-5cd30f544e4b)
+........................................................................................
+![Sign3](https://github.com/user-attachments/assets/458f9a0d-57ea-42c2-ab6e-917f8b82ada9)
+.........................................................................................
+
+
+
